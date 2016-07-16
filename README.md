@@ -9,7 +9,7 @@ This starter is as minimal as possible while still including Babel and Webpack.
 Create Project
 ---
 ```
-git clone git@github.com:ahfarmer/minimal-react-starter.git
+git clone git@github.com:Raathigesh/minimal-react-starter.git
 ```
 
 ## Setup
