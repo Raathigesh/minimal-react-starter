@@ -9,7 +9,7 @@ var config = {
     './main.jsx',
   ],
   output: {
-    path: path.join(__dirname, 'www'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
   },
   module: {
