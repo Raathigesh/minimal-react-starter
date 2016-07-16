@@ -1,9 +1,12 @@
 var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
   context: path.join(__dirname, 'src'),
   entry: [
-    './main.js',
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+    './main.jsx',
   ],
   output: {
     path: path.join(__dirname, 'www'),
@@ -12,10 +15,14 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         exclude: /node_modules/,
-        loaders: ['babel'],
+        loaders: ['react-hot', 'babel'],
       },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+      }
     ],
   },
   resolveLoader: {
@@ -27,6 +34,13 @@ var config = {
     root: [
       path.join(__dirname, 'node_modules'),
     ],
+    extensions: ['', '.js', '.jsx']
   },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin("style.css")
+  ],
 };
 module.exports = config;
