@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './Counter';
+import App from './components/App';
+import './style/app.css';
 
-document.addEventListener('DOMContentLoaded', function() {
-  ReactDOM.render(
-    <Counter />,
-    document.getElementById('mount')
-  );
-});
+ReactDOM.render(
+  <App />,
+  document.getElementById('mount')
+);
