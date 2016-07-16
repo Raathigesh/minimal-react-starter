@@ -5,7 +5,7 @@ var config = {
   context: path.join(__dirname, 'src'),
   entry: [
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    './main.js',
+    './main.jsx',
   ],
   output: {
     path: path.join(__dirname, 'www'),
@@ -14,7 +14,7 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         exclude: /node_modules/,
         loaders: ['react-hot', 'babel'],
       },
@@ -29,6 +29,7 @@ var config = {
     root: [
       path.join(__dirname, 'node_modules'),
     ],
+    extensions: ['', '.js', '.jsx']
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
