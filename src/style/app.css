@@ -1,3 +1,8 @@
 body {
-  background-color: red;
+  background-color: #eeeeee;
+}
+
+.cat {
+  height: 400px;
+  margin: 16px;
 }
