@@ -4,6 +4,6 @@ import App from './components/App';
 import './style/app.css';
 
 ReactDOM.render(
-  <App />,
+  <App title="My awesome app 12" />,
   document.getElementById('mount')
 );
